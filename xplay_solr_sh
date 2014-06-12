@@ -1,0 +1,17 @@
+#!/bin/bash
+# copyright David Bundgaard
+# email: david.bundgaard@basefarm.se
+
+function full_import() {
+	curl -H "content-type: application/xml" http://vss-s-db01.sth.basefarm.net:8082/solr3/xplaycms/dataimport?command=full-import
+}
+
+function status() {
+	curl -H "content-type: application/xml" http://vss-s-db01.sth.basefarm.net:8082/solr/xplaycms/dataimport?command=status
+}
+
+function delta_import() {
+	curl -H "content-type: application/xml" http://vss-s-db01.sth.basefarm.net:8082/solr/xplaycms/dataimport?command=delta-import
+}
+
+full_import
